@@ -48,6 +48,7 @@ func (c *controller) Run() error {
 
 	c.exCtx, c.cancel = context.WithCancel(c.parentCtx)
 	c.isRunning = true
+	defer c.Stop()
 
 	errorChan := c.trigger.NotifyError()
 	go func() {
@@ -59,28 +60,38 @@ func (c *controller) Run() error {
 	}()
 	c.taskChan = c.trigger.Listen()
 
-	c.eg.Go(func() (err error) {
-		defer func() {
-			if r := recover(); r != nil {
-				err = errors.ConvertPanicToError(r)
-			}
-		}()
+	for i := 0; i < c.options.NumOfWorker; i++ {
+		workerCtx := context.WithValue(c.exCtx, WorkerContextKey, WorkerContext{
+			ID: fmt.Sprintf("Worker %d", i),
+		})
+		c.eg.Go(func() (err error) {
+			defer func() {
+				if r := recover(); r != nil {
+					err = errors.ConvertPanicToError(r)
+				}
+			}()
 
-		for {
-			task := <-c.taskChan
+			for {
+				select {
+				case <-workerCtx.Done():
+					return nil
 
-			handler, ok := c.router.Resolve(task.Type())
-			if !ok {
-				task.Fail(fmt.Errorf("Cannot handle task type %s", task.Type()))
-			}
+				case task := <-c.taskChan:
+					handler, ok := c.router.Resolve(task.Type())
+					if !ok {
+						task.Fail(fmt.Errorf("Cannot handle task type %s", task.Type()))
+					}
 
-			err := handler(c.exCtx, task)
-			if err != nil {
-				task.Fail(err)
+					err := handler(workerCtx, task)
+					if err != nil {
+						task.Fail(err)
+					}
+					task.Complete()
+				}
+
 			}
-			task.Complete()
-		}
-	})
+		})
+	}
 
 	return c.eg.Wait()
 }

@@ -2,7 +2,8 @@ package workers
 
 import (
 	"context"
-	"goworkers/tasks"
+
+	"github.com/CodeLinkIO/goworkers/tasks"
 )
 
 type Handler func(ctx context.Context, task tasks.Task) error

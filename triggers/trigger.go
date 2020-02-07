@@ -1,6 +1,6 @@
 package triggers
 
-import "goworkers/tasks"
+import "github.com/CodeLinkIO/goworkers/tasks"
 
 type Trigger interface {
 	Notify(tasks.Task)

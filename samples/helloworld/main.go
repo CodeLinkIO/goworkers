@@ -3,11 +3,12 @@ package main
 import (
 	"context"
 	"fmt"
-	"goworkers/tasks"
-	"goworkers/triggers/notifiers"
-	"goworkers/workers"
 	"log"
 	"time"
+
+	"github.com/CodeLinkIO/goworkers/tasks"
+	"github.com/CodeLinkIO/goworkers/triggers/notifiers"
+	"github.com/CodeLinkIO/goworkers/workers"
 )
 
 func handleHello(ctx context.Context, task tasks.Task) error {

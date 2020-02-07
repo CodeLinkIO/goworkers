@@ -1,4 +1,4 @@
-module goworkers
+module github.com/CodeLinkIO/goworkers
 
 go 1.13
 

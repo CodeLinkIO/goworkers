@@ -1,8 +1,8 @@
 package notifiers
 
 import (
-	"goworkers/tasks"
-	"goworkers/triggers"
+	"github.com/CodeLinkIO/goworkers/tasks"
+	"github.com/CodeLinkIO/goworkers/triggers"
 )
 
 type notifier struct {

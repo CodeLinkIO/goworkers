@@ -3,10 +3,10 @@ package workers
 import (
 	"context"
 	"fmt"
-	"goworkers/tasks"
-	"goworkers/triggers"
-	"goworkers/utils/errors"
 
+	"github.com/CodeLinkIO/goworkers/tasks"
+	"github.com/CodeLinkIO/goworkers/triggers"
+	"github.com/CodeLinkIO/goworkers/utils/errors"
 	"golang.org/x/sync/errgroup"
 )
 

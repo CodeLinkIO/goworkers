@@ -4,17 +4,18 @@ import (
 	"context"
 	"fmt"
 	"goworkers/tasks"
+	"goworkers/triggers/notifiers"
 	"goworkers/workers"
 	"log"
 	"time"
 )
 
-func handle(ctx context.Context, task tasks.Task) error {
+func handleHello(ctx context.Context, task tasks.Task) error {
 	workerContext, ok := ctx.Value(workers.WorkerContextKey).(workers.WorkerContext)
 	if !ok {
 		return fmt.Errorf("Cannot get worker context")
 	}
-	processingTask, ok := task.(*sampleTask)
+	processingTask, ok := task.(*helloTask)
 	if !ok {
 		return fmt.Errorf("Cannot parse task")
 	}
@@ -31,15 +32,15 @@ func main() {
 	ctx := context.Background()
 
 	router := workers.NewRouter()
-	router.Register("Hello", handle)
+	router.Register("Hello", handleHello)
 
-	trigger := NewTrigger()
+	trigger := notifiers.NewTrigger()
 
 	controller := workers.NewController(ctx, trigger, router, options)
 
 	go func() {
 		for i := 0; i < 20; i++ {
-			trigger.Notify(&sampleTask{Message: fmt.Sprintf("tsk_%d", i)})
+			trigger.Notify(&helloTask{Message: fmt.Sprintf("tsk_%d", i)})
 			time.Sleep(100 * time.Millisecond)
 		}
 

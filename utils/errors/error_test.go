@@ -19,3 +19,8 @@ func TestConvertPanicToError(t *testing.T) {
 	err = ConvertPanicToError(1)
 	assert.Error(t, err, "Should convert other type to error")
 }
+
+func ExampleConvertPanicToError() {
+	fmt.Println(ConvertPanicToError("Error 1"))
+	// Output: Error 1
+}

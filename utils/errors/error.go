@@ -2,7 +2,8 @@ package errors
 
 import "fmt"
 
-// ConvertPanicToError returns an error based on different types
+// ConvertPanicToError grabs panic in recover()
+// and then returns an error based on different types that it catches
 func ConvertPanicToError(r interface{}) error {
 	switch r.(type) {
 	case error:

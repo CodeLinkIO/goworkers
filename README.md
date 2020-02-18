@@ -89,7 +89,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
 <table>
   <tr>
     <td align="center"><a href="https://github.com/huynvk"><img src="https://avatars2.githubusercontent.com/u/15973503?v=4" width="100px;" alt=""/><br /><sub><b>Huy Ngo</b></sub></a><br /><a href="#ideas-huynvk" title="Ideas, Planning, & Feedback">🤔</a></td>
-    <td align="center"><a href="https://github.com/peterphan1996"><img src="https://avatars1.githubusercontent.com/u/28189578?v=4" width="100px;" alt=""/><br /><sub><b>Peter Phan</b></sub></a><br /><a href="#ideas-peterphan1996" title="Ideas, Planning, & Feedback">🤔</a></td>
+    <td align="center"><a href="https://github.com/peterphan1996"><img src="https://avatars1.githubusercontent.com/u/28189578?v=4" width="100px;" alt=""/><br /><sub><b>Peter Phan</b></sub></a><br /><a href="#ideas-peterphan1996" title="Ideas, Planning, & Feedback">🤔</a> <a href="https://github.com/CodeLinkIO/goworkers/commits?author=peterphan1996" title="Documentation">📖</a> <a href="https://github.com/CodeLinkIO/goworkers/commits?author=peterphan1996" title="Code">💻</a></td>
   </tr>
 </table>
 

@@ -88,7 +88,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
 <!-- markdownlint-disable -->
 <table>
   <tr>
-    <td align="center"><a href="https://github.com/huynvk"><img src="https://avatars2.githubusercontent.com/u/15973503?v=4" width="100px;" alt=""/><br /><sub><b>Huy Ngo</b></sub></a><br /><a href="#ideas-huynvk" title="Ideas, Planning, & Feedback">🤔</a></td>
+    <td align="center"><a href="https://github.com/huynvk"><img src="https://avatars2.githubusercontent.com/u/15973503?v=4" width="100px;" alt=""/><br /><sub><b>Huy Ngo</b></sub></a><br /><a href="#ideas-huynvk" title="Ideas, Planning, & Feedback">🤔</a> <a href="https://github.com/CodeLinkIO/goworkers/pulls?q=is%3Apr+reviewed-by%3Ahuynvk" title="Reviewed Pull Requests">👀</a> <a href="#example-huynvk" title="Examples">💡</a> <a href="https://github.com/CodeLinkIO/goworkers/commits?author=huynvk" title="Code">💻</a></td>
   </tr>
 </table>
 

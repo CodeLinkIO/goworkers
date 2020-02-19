@@ -16,6 +16,17 @@
         "example",
         "code"
       ]
+    },
+    {
+      "login": "peterphan1996",
+      "name": "Peter Phan",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/28189578?v=4",
+      "profile": "https://github.com/peterphan1996",
+      "contributions": [
+        "ideas",
+        "doc",
+        "code"
+      ]
     }
   ],
   "contributorsPerLine": 7,
